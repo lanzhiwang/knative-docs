@@ -10,24 +10,33 @@ This topic describes how to install Knative Serving by applying YAML files using
 To install the Knative Serving component:
 
 1. Install the required custom resources by running the command:
+   通过运行以下命令安装所需的自定义资源：
 
     ```bash
     kubectl apply -f {{ artifact(repo="serving",file="serving-crds.yaml")}}
+
+    kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.3/serving-crds.yaml
+
     ```
 
-1. Install the core components of Knative Serving by running the command:
+2. Install the core components of Knative Serving by running the command:
+   通过运行以下命令安装 Knative Serving 的核心组件：
 
     ```bash
     kubectl apply -f {{ artifact(repo="serving",file="serving-core.yaml")}}
+
+    kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.3/serving-core.yaml
     ```
 
     !!! info
         For information about the YAML files in Knative Serving, see [Knative Serving installation files](serving-installation-files.md).
+        有关 Knative Serving 中的 YAML 文件的信息，请参阅 Knative Serving 安装文件。
 
 ## Install a networking layer
 
 The following tabs expand to show instructions for installing a networking layer.
 Follow the procedure for the networking layer of your choice:
+以下选项卡展开以显示安装网络层的说明。 请按照您选择的网络层的过程进行操作：
 
 <!-- TODO: Link to document/diagram describing what is a networking layer.  -->
 <!-- This indentation is important for things to render properly. -->
@@ -65,16 +74,23 @@ Follow the procedure for the networking layer of your choice:
 
     1. Install a properly configured Istio by following the
     [Advanced Istio installation](../../installing-istio.md) instructions or by running the command:
+       按照高级 Istio 安装说明或运行以下命令来安装正确配置的 Istio：
 
         ```bash
         kubectl apply -l knative.dev/crd-install=true -f {{ artifact(repo="net-istio",file="istio.yaml")}}
         kubectl apply -f {{ artifact(repo="net-istio",file="istio.yaml")}}
+
+        kubectl apply -l knative.dev/crd-install=true -f https://github.com/knative/net-istio/releases/download/knative-v1.12.1/istio.yaml
+
+        kubectl apply -f https://github.com/knative/net-istio/releases/download/knative-v1.12.1/istio.yaml
         ```
 
     1. Install the Knative Istio controller by running the command:
 
         ```bash
         kubectl apply -f {{ artifact(repo="net-istio",file="net-istio.yaml")}}
+
+        kubectl apply -f https://github.com/knative/net-istio/releases/download/knative-v1.12.1/net-istio.yaml
         ```
 
     1. Fetch the External IP address or CNAME by running the command:
@@ -163,6 +179,8 @@ The following tabs expand to show instructions for installing each Serving exten
 
         ```bash
         kubectl apply -f {{ artifact(repo="serving",file="serving-hpa.yaml")}}
+
+        kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.3/serving-hpa.yaml
         ```
 
     <!-- TODO(https://github.com/knative/docs/issues/2152): Link to a more in-depth guide on HPA-class autoscaling -->

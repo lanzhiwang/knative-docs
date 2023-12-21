@@ -1,9 +1,13 @@
 # Knative Serving installation files
 
 This guide provides reference information about the core Knative Serving YAML files, including:
+本指南提供有关 Knative Serving YAML 核心文件的参考信息，包括：
 
 - The custom resource definitions (CRDs) and core components required to install Knative Serving.
+  安装 Knative Serving 所需的自定义资源定义 (CRD) 和核心组件。
+
 - Optional components that you can apply to customize your installation.
+  您可以应用这些可选组件来自定义您的安装。
 
 For information about installing these files, see [Installing Knative Serving using YAML files](install-serving-with-yaml.md).
 

@@ -5,9 +5,11 @@
 
 You can install the Serving component, Eventing component, or both on your
 cluster by using one of the following deployment options:
+您可以使用以下部署选项之一在集群上安装服务组件、事件组件或两者：
 
 - Use the [Knative Quickstart plugin](quickstart-install.md) to install a
 preconfigured, local distribution of Knative for development purposes.
+  使用 Knative Quickstart 插件安装预配置的 Knative 本地发行版以进行开发。
 
 - Use a YAML-based installation to install a production ready deployment:
     - [Install Knative Serving by using YAML](yaml-install/serving/install-serving-with-yaml.md)
